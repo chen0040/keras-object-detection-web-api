@@ -25,7 +25,6 @@ def main():
     draw_boxes(image, out_scores, out_boxes, out_classes, detector.class_names, colors)
     # Save the predicted bounding box on the image
     image.save(os.path.join("out", image_file), quality=90)
-    # Display the results in the notebook
     output_image = scipy.misc.imread(os.path.join("out", image_file))
     imshow(output_image)
 
