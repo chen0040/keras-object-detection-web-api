@@ -15,7 +15,7 @@ def main():
     detector = YoloObjectDetector()
     detector.load_model(model_dir_path)
 
-    image, out_scores, out_boxes, out_classes = detector.predict
+    image, out_scores, out_boxes, out_classes = detector.predict(image_file)
 
     # Print predictions info
     print('Found {} boxes for {}'.format(len(out_boxes), image_file))

@@ -11,6 +11,8 @@ import PIL
 import tensorflow as tf
 from keras import backend as K
 from keras.layers import Input, Lambda, Conv2D
+
+from keras_object_detection.library.download_utils import download_file
 from keras_object_detection.library.yolo_utils import read_classes, read_anchors, generate_colors, preprocess_image, \
     draw_boxes, scale_boxes
 from keras_object_detection.library.yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, \
@@ -220,7 +222,10 @@ class YoloObjectDetector(object):
         self.class_names = read_classes(model_dir_path + "/coco_classes.txt")
         self.anchors = read_anchors(model_dir_path + "/yolo_anchors.txt")
 
-        self.yolo_model = load_model(model_dir_path + "/yolo.h5")
+        yolo_model_file = model_dir_path + "/yolo.h5"
+        yolo_model_file_download_link = 'https://www.dropbox.com/s/krwz5xtpuorah48/yolo.h5?dl=1'
+        download_file(yolo_model_file, url_path=yolo_model_file_download_link)
+        self.yolo_model = load_model(yolo_model_file)
         print(self.yolo_model.summary())
 
         # The output of yolo_model is a (m, 19, 19, 5, 85) tensor that needs to pass through non-trivial
