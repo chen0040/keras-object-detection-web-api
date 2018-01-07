@@ -6,6 +6,10 @@ A simple wrapper over keras object detection libraries and provide web api using
 
 ### Detect objects in an image using YOLO algorithm
 
+The demo code below can be found in [keras_object_detection/demo/yolo_predict.py](keras_object_detection/demo/yolo_predict.py)
+
+The demo codes takes in the image [keras_object_detection/demo/images/test.jpg](keras_object_detection/demo/images/test.jpg) and output the detected boxes with class labels
+
 ```python
 import os
 
@@ -31,7 +35,7 @@ colors = generate_colors(detector.class_names)
 # Draw bounding boxes on the image file
 draw_boxes(image, out_scores, out_boxes, out_classes, detector.class_names, colors)
 # Save the predicted bounding box on the image
-image.save(os.path.join("out", image_file), quality=90)
+image.save(os.path.join("keras_object_detection/demo/out", image_file), quality=90)
 # Display the results in the notebook
 output_image = scipy.misc.imread(os.path.join("out", image_file))
 imshow(output_image)
