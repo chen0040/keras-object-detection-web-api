@@ -39,5 +39,12 @@ image.save(os.path.join("keras_object_detection/demo/out", image_file), quality=
 # Display the results in the notebook
 output_image = scipy.misc.imread(os.path.join("out", image_file))
 imshow(output_image)
-
 ```
+
+Below is the image before detection:
+
+![image-before](keras_object_detection/demo/images/test.jpg)
+
+Here is the image after detection:
+
+![image-after](keras_object_detection/demo/out/images/test.jpg)
