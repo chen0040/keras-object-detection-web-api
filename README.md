@@ -35,8 +35,8 @@ colors = generate_colors(detector.class_names)
 # Draw bounding boxes on the image file
 draw_boxes(image, out_scores, out_boxes, out_classes, detector.class_names, colors)
 # Save the predicted bounding box on the image
-image.save(os.path.join("keras_object_detection/demo/out", image_file), quality=90)
-output_image = scipy.misc.imread(os.path.join("out", image_file))
+image.save("keras_object_detection/demo/out/images/test.jpg", quality=90)
+output_image = scipy.misc.imread("keras_object_detection/demo/out/images/test.jpg")
 imshow(output_image)
 ```
 
