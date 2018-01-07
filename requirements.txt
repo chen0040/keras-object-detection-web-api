@@ -1,5 +1,5 @@
 scikit-learn
-keras
+keras==2.0.8
 tensorflow
 pandas
 numpy

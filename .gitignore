@@ -9,6 +9,7 @@ __pycache__/
 .idea/
 *.iml
 keras_object_detection/training/very_large_data
+keras_object_detection/models/yolo.h5
 
 # Distribution / packaging
 .Python
